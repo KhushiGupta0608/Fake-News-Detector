@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static', filename='style.css')}}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <title>Home</title>
+</head>
+<body>
+    <nav class="light" role="navigation">
+      <ul>
+        <li><a href="#home" class="active">Logo</a></li>
+        <li style="float:right"><a href="#menu">Menu</a></li>
+      </ul>
+    </nav>
+    <div>
+        <h1>News prediction</h1>
+    </div>
+    <div class="loc" class="row_center">
+      <form action="/predict" method="post">
+        <label for="first_name" class="entry">
+          Title:
+        </label>
+         <input placeholder="Title" name='Text', id="first" type="text" class="validate" required="required">
+         <br>
+         <br>
+         <button type="submit" class="button">predict</a></button>
+      </form>
+      <br>
+      <br>
+      <div class="prediction">
+        {{ pred }}
+      </div>
+      
+    <div class="footer-basic">
+      <footer>
+        <p class="copyright">Company Name © 2018</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
